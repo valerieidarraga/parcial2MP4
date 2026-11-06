@@ -1,0 +1,151 @@
+
+<%- include('partials/header') %>
+
+
+<% if (mensajeServidor) { %>
+    <div class="alert alert-success text-center rounded-4 shadow-sm" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        <%= mensajeServidor %>
+    </div>
+<% } %>
+
+<section class="page-container">
+
+    <!-- Encabezado de la sección -->
+    <div class="text-center mb-4">
+
+        <p class="section-eyebrow">
+            Centro de soporte tecnológico
+        </p>
+
+        <h1 class="section-title fw-bold">
+            Reportar una falla
+        </h1>
+
+        <p class="text-secondary">
+            Cuéntanos qué está sucediendo y nuestro equipo de sistemas
+            podrá ayudarte.
+        </p>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8 col-md-10">
+
+            <div class="helpdesk-form">
+
+                <!-- Encabezado de la tarjeta -->
+                <div class="text-center mb-4">
+
+                    <div class="display-4 mb-2">🛠️</div>
+
+                    <h3 class="fw-bold section-title">
+                        Formulario de soporte técnico
+                    </h3>
+
+                    <p class="text-secondary small">
+                        Completa los siguientes campos para registrar
+                        tu solicitud.
+                    </p>
+
+                </div>
+
+                <!-- Formulario -->
+                <form action="/reportar" method="POST">
+
+                    <div class="mb-4">
+
+                        <label for="nombre" class="form-label">
+                            <i class="bi bi-person-fill me-2 text-primary"></i>
+                            Nombre del solicitante
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Ej. María Fernanda"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label for="ubicacion" class="form-label">
+                            <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
+                            Aula o ubicación
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="ubicacion"
+                            name="ubicacion"
+                            placeholder="Ej. Óvalo 2, laboratorio de sistemas..."
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label for="descripcion" class="form-label">
+                            <i class="bi bi-chat-left-text-fill me-2 text-primary"></i>
+                            Descripción del problema
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="descripcion"
+                            name="descripcion"
+                            rows="5"
+                            maxlength="1000"
+                            placeholder="Describe detalladamente la falla técnica..."
+                            required
+                        ></textarea>
+
+                        <div class="form-text">
+                            Explica qué equipo presenta la falla y qué sucede.
+                        </div>
+
+                    </div>
+
+                    <div class="d-grid gap-2">
+
+                        <button type="submit" class="btn btn-helpdesk">
+                            <i class="bi bi-send-fill me-2"></i>
+                            Enviar reporte
+                        </button>
+
+                        <a href="/" class="btn btn-outline-secondary">
+                            Cancelar y volver al inicio
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- Nota informativa -->
+            <div class="alert alert-info mt-4 rounded-4">
+
+                <i class="bi bi-info-circle-fill me-2"></i>
+
+                Recuerda proporcionar información clara para facilitar
+                la atención de tu reporte.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,102 @@
+<%- include('partials/header') %>
+
+<section class="container page-container py-5">
+
+    <!-- Encabezado del panel -->
+    <div class="mb-4">
+        <span class="section-eyebrow">GESTIÓN DE SOPORTE</span>
+        <h1 class="section-title">Panel de tickets</h1>
+        <p class="text-muted">
+            Consulta los reportes enviados por la comunidad universitaria.
+        </p>
+    </div>
+
+    <!-- Contador de reportes -->
+    <div class="helpdesk-card p-4 mb-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div>
+                <p class="text-muted mb-1">Reportes pendientes</p>
+                <h2 class="display-5 fw-bold mb-0"><%= tickets.length %></h2>
+            </div>
+
+            <div class="brand-icon">
+                <i class="bi bi-clipboard-data-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de tickets -->
+    <div class="helpdesk-card p-4">
+
+        <h4 class="fw-bold mb-3">Reportes recibidos</h4>
+
+        <% if (tickets.length > 0) { %>
+
+            <div class="table-responsive">
+                <table class="table align-middle helpdesk-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Ubicación</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% tickets.forEach(ticket => { %>
+                            <tr>
+                                <td><%= ticket.id %></td>
+                                <td><%= ticket.nombre %></td>
+                                <td><%= ticket.ubicacion %></td>
+                                <td><%= ticket.descripcion %></td>
+                                <td><%= ticket.fecha %></td>
+                                <td>
+                                    <span class="badge text-bg-warning">
+                                    Pendiente
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <form action="/panel/resolver" method="POST"
+                                    onsubmit="return confirm('¿Estás seguro de que deseas marcar este ticket como resuelto?');">
+
+                                    <input type="hidden" name="idTicket" value="<%= ticket.id %>">
+
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                    Resuelto
+                                    </button>
+
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+        <% } else { %>
+
+            <div class="text-center py-5">
+                <i class="bi bi-inbox display-3 text-muted"></i>
+                <h5 class="fw-bold mt-3">Todavía no hay reportes</h5>
+                <p class="text-muted mb-3">
+                    Cuando alguien registre una falla, aparecerá aquí.
+                </p>
+                <a href="/reportar" class="btn btn-helpdesk">
+                    <i class="bi bi-plus-circle me-2"></i>
+                    Registrar un reporte
+                </a>
+            </div>
+
+        <% } %>
+
+    </div>
+
+</section>
+
+<%- include('partials/footer') %>

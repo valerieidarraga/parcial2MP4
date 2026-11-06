@@ -1,0 +1,209 @@
+
+/* ===== CONFIGURACIÓN GENERAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f1f5fb;
+    color: #25324a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+.helpdesk-navbar {
+    background: linear-gradient(110deg, #174ea6, #2478d4, #16a6a0);
+    padding: 14px 0;
+    box-shadow: 0 3px 15px rgba(20, 65, 130, 0.2);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    background-color: #ffffff;
+    color: #1759ae;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.helpdesk-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 600;
+    margin-left: 8px;
+    padding: 9px 15px !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.helpdesk-navbar .nav-link:hover,
+.helpdesk-navbar .nav-link.active {
+    background-color: #ffffff;
+    color: #1759ae;
+}
+
+/* ===== CONTENEDOR DE PÁGINA ===== */
+.page-container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 18px;
+}
+
+/* ===== TÍTULOS Y TEXTOS ===== */
+.section-eyebrow {
+    color: #168e9c;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-title {
+    color: #174b91;
+    font-weight: 800;
+}
+
+/* ===== BOTONES ===== */
+.btn-helpdesk {
+    background-color: #1768c4;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-helpdesk:hover {
+    background-color: #104b91;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ===== TARJETAS ===== */
+.helpdesk-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(36, 70, 120, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.helpdesk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(36, 70, 120, 0.13);
+}
+
+/* ===== FORMULARIOS ===== */
+.helpdesk-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(36, 70, 120, 0.08);
+}
+
+.form-label {
+    color: #344767;
+    font-weight: 700;
+}
+
+.form-control {
+    border: 1px solid #d9e2ef;
+    border-radius: 9px;
+    padding: 11px 13px;
+}
+
+.form-control:focus {
+    border-color: #3986d7;
+    box-shadow: 0 0 0 0.2rem rgba(57, 134, 215, 0.15);
+}
+
+/* ===== TABLA DE TICKETS ===== */
+.helpdesk-table {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(36, 70, 120, 0.07);
+}
+
+.helpdesk-table thead th {
+    background-color: #1759a8;
+    color: #ffffff;
+    padding: 16px;
+    white-space: nowrap;
+}
+
+.helpdesk-table tbody td {
+    padding: 14px;
+    vertical-align: middle;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.helpdesk-footer {
+    background: linear-gradient(110deg, #153d78, #1759a8);
+    color: #ffffff;
+    text-align: center;
+}
+
+.helpdesk-footer p {
+    color: #dceaff;
+}
+
+.helpdesk-footer small {
+    color: #b8d2f3;
+}
+
+/* ===== ADAPTACIÓN A CELULARES ===== */
+@media (max-width: 768px) {
+    .page-container {
+        margin: 28px auto;
+    }
+
+    .helpdesk-form {
+        padding: 20px;
+    }
+
+    .helpdesk-navbar .nav-link {
+        margin: 4px 0;
+    }
+}
+
+/* ===== FORMULARIO DE REPORTES ===== */
+
+.helpdesk-form {
+    border-top: 6px solid #16a6a0;
+}
+
+.helpdesk-form .display-4 {
+    color: #1768c4;
+}
+
+.helpdesk-form .form-text {
+    color: #8190a5;
+    margin-top: 7px;
+}
+
+.helpdesk-form .btn-helpdesk {
+    padding: 14px;
+    font-size: 1rem;
+}

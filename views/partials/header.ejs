@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= titulo %> | HelpDesk Universitario</title>
+
+    <!-- Bootstrap local -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="/css/estilos.css">
+
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark helpdesk-navbar sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="/">
+                <span class="brand-icon">HD</span>
+                HelpDesk Universitario
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Abrir menú">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end"
+                id="menuPrincipal">
+
+                <div class="navbar-nav">
+
+                    <a class="nav-link <%= paginaactual === 'inicio' ? 'active' : '' %>"
+                       href="/"
+                       <%= paginaactual === 'inicio' ? 'aria-current="page"' : '' %>>
+                        Inicio
+                    </a>
+
+                    <a class="nav-link <%= paginaactual === 'reportar' ? 'active' : '' %>"
+                       href="/reportar"
+                       <%= paginaactual === 'reportar' ? 'aria-current="page"' : '' %>>
+                        Reportar falla
+                    </a>
+
+                    <a class="nav-link <%= paginaactual === 'panel' ? 'active' : '' %>"
+                       href="/panel"
+                       <%= paginaactual === 'panel' ? 'aria-current="page"' : '' %>>
+                        Panel de tickets
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
