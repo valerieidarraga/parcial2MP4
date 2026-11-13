@@ -49,11 +49,11 @@
                     <tbody>
                         <% tickets.forEach(ticket => { %>
                             <tr>
-                                <td><%= ticket.id %></td>
+                                <td><%= ticket._id %></td>
                                 <td><%= ticket.nombre %></td>
                                 <td><%= ticket.ubicacion %></td>
                                 <td><%= ticket.descripcion %></td>
-                                <td><%= ticket.fecha %></td>
+                                <td><%= new Date(ticket.fecha).toLocaleString('es-CO') %></td>
                                 <td>
                                     <span class="badge text-bg-warning">
                                     Pendiente
@@ -64,7 +64,7 @@
                                     <form action="/panel/resolver" method="POST"
                                     onsubmit="return confirm('¿Estás seguro de que deseas marcar este ticket como resuelto?');">
 
-                                    <input type="hidden" name="idTicket" value="<%= ticket.id %>">
+                                    <input type="hidden" name="idTicket" value="<%= ticket._id %>">
 
                                     <button type="submit" class="btn btn-success btn-sm">
                                     <i class="bi bi-check-circle-fill me-1"></i>
